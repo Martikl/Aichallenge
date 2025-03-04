@@ -22,7 +22,7 @@
     }
     /* Header / Hero Section */
     header {
-      /* Platzhalter-Bild – ersetze diesen Link bei Bedarf */
+      /* Platzhalter-Bild – ersetze diesen Link bei Bedarf oder lade dein Bild in deinen GitHub Repo hoch */
       background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
       height: 100vh;
       position: relative;
@@ -32,14 +32,14 @@
       text-align: center;
       padding: 20px;
     }
-    /* Kräftigeres Orange im Overlay (#ff5e00) */
+    /* Kräftigeres Orange im Overlay */
     header::after {
       content: "";
       position: absolute;
       top: 0; left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 94, 0, 0.7); /* Overlay mit kräftigem Orange */
+      background: rgba(255, 94, 0, 0.8); /* Kräftiges Orange (#ff5e00) */
       z-index: 1;
     }
     header > div {
@@ -62,7 +62,7 @@
       font-size: 1.2rem;
       margin-bottom: 30px;
     }
-    /* CTA Button: Weiß mit oranger Umrandung, invertiert beim Hover */
+    /* Allgemeiner CTA Button (für z.B. "Jetzt Durchstarten") */
     .cta-button {
       display: inline-block;
       background-color: #fff;
@@ -78,6 +78,24 @@
     .cta-button:hover {
       background-color: #f48324;
       color: #fff;
+    }
+    /* Neuer Video-Button: unsichtbare Box mit Play-Icon und Hover-Effekt */
+    .video-button {
+      display: inline-flex;
+      align-items: center;
+      background: none;
+      border: none;
+      color: #f48324;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .video-button .play-icon {
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+    .video-button:hover {
+      transform: scale(0.95);
     }
     /* Sections */
     section {
@@ -103,9 +121,9 @@
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
-    /* Gelber Bereich */
+    /* Gelber Bereich für Call-to-Action */
     .section-bg {
-      background-color: #ffd700;
+      background-color: #ffd700; /* Gelb */
       color: #333;
     }
     /* Footer */
@@ -116,7 +134,7 @@
       font-size: 0.9rem;
       color: #333;
     }
-    /* Modal Styles */
+    /* Modal Styles für das Video */
     .modal {
       display: none; /* Hidden by default */
       position: fixed;
@@ -191,7 +209,7 @@
   <!-- Header / Hero Section -->
   <header>
     <div>
-      <!-- Pfad/URL zum Bild anpassen, wenn du es in deinem GitHub Repo ablegst -->
+      <!-- Bild: Pfad anpassen, wenn es im GitHub Repo unter z.B. /images/ liegt -->
       <img 
         src="img_0834_229184988395951959-1739112635.webp" 
         alt="7 Tage AI Produkt Challenge Box" 
@@ -219,8 +237,11 @@
   <section id="video">
     <h2>Info Video anschauen</h2>
     <p>Erfahre in unserem Video, wie einfach es ist, mit der 7 Tage AI Produkt Challenge durchzustarten.</p>
-    <!-- Button, der das Video-Popup öffnet -->
-    <a href="javascript:void(0)" id="openModal" class="cta-button">Video ansehen</a>
+    <!-- Neuer Video-Button: unsichtbare Box mit Play-Icon -->
+    <button id="openModal" class="video-button">
+      <span class="play-icon">▶</span>
+      <span class="video-text">Info Video anschauen</span>
+    </button>
   </section>
   
   <!-- Call-to-Action Section -->
@@ -240,12 +261,12 @@
     <div class="modal-content">
       <span class="close-button" id="closeModal">&times;</span>
       <div class="video-container">
-        <!-- Direkte Einbettung von YouTube mit Parametern -->
+        <!-- Direkt eingebettetes YouTube-Video -->
         <iframe 
           src="https://www.youtube.com/embed/wfrctsCWgbk?si=Q3uBidonHYA_lqhg" 
           frameborder="0" 
-          allowfullscreen
-        ></iframe>
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>
