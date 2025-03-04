@@ -55,20 +55,22 @@
       font-size: 1.2rem;
       margin-bottom: 30px;
     }
-    /* CTA Button */
+    /* CTA Button: Weiß mit oranger Umrandung, invertiert beim Hover */
     .cta-button {
       display: inline-block;
-      background-color: #f48324;
-      color: #fff;
+      background-color: #fff;
+      color: #f48324;
       padding: 15px 30px;
       font-size: 1.2rem;
+      border: 2px solid #f48324;
       border-radius: 30px;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
       line-height: 1.2;
       vertical-align: middle;
     }
     .cta-button:hover {
-      background-color: #e0701a;
+      background-color: #f48324;
+      color: #fff;
     }
     /* Sections */
     section {
@@ -158,8 +160,7 @@
     <h2>Info Video anschauen</h2>
     <p>Erfahre in unserem Video, wie einfach es ist, mit der 7 Tage AI Produkt Challenge durchzustarten.</p>
     <div class="video-container">
-      <!-- Ersetze VIDEO_ID durch die tatsächliche YouTube-ID -->
-      <iframe src="https://www.youtube.com/watch?si=Q3uBidonHYA_lqhg&v=wfrctsCWgbk&feature=youtu.be" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/wfrctsCWgbk" frameborder="0" allowfullscreen></iframe>
     </div>
   </section>
   
